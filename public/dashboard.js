@@ -26,13 +26,13 @@ socket.on('connect', function () {
 
 socket.on('btn click', function(data){
         if(btnclicks[data.button]){
-            console.log("already presented");
+            // console.log("already presented");
             btnclicks[data.button].clicks+=1;
             console.log(btnclicks[data.button].clicks);
             $('#btn' + btnclicks[data.button].btnid).html(btnclicks[data.button].clicks);            
         }
         else{
-            console.log("not presented");
+            // console.log("not presented");
             btnclicks[data.button] = {clicks : 1, btnid : ++lastBtnId};
             $('#btnClicks tbody').append('<tr><td>' + data.button + '</td><td id = "btn' + lastBtnId + '">1</td></tr>');
         }

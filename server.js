@@ -12,30 +12,19 @@ app.configure(function () {
     app.use(express.static(path.join(__dirname, '/public')));
 });
 
-app.get('/', function(req,res){
-	res.render('index');
-});
-
 var server = http.createServer(app);
-io = io.listen(server,{
-    'authorization' : function (handshakeData, callback) {
+io = io.listen(server);
+
+
+io.configure(function () {
+    io.set('authorization', function (handshakeData, callback) {
         if (handshakeData.xdomain) {
             callback('Cross-domain connections are not allowed');
         } else {
             callback(null, true);
         }
-    }
+    });
 });
-
-// io.configure(function () {
-//     io.set('authorization', function (handshakeData, callback) {
-//         if (handshakeData.xdomain) {
-//             callback('Cross-domain connections are not allowed');
-//         } else {
-//             callback(null, true);
-//         }
-//     });
-// });
 
 server.listen(app.get('port'), function () {
     console.log("Express server listening on port " + app.get('port'));
