@@ -1,7 +1,7 @@
 var btnclicks = 0;
 var url = window.location;	//url of the website
 
-var socket = io.connect('http://localhost:3000');
+var socket = io.connect('');
 
 socket.on('connect', function () {
 	socket.send(url);
