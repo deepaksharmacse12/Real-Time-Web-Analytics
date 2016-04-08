@@ -1,0 +1,15 @@
+{
+    "name": "real-time-analytics",
+    "description": "Sample app for real time web analytics",
+    "version": "0.0.1",
+	"main" : "server",
+	"scripts" : {
+		"start" : "node server.js"
+	},
+    "private": true,
+    "dependencies": {
+        "express": "3.x",
+        "mongodb": "1.1.8",
+        "socket.io": "0.9.10"
+    }
+}
