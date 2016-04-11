@@ -4,6 +4,7 @@ var express = require('express'),
     io = require('socket.io');
 
 var app = express();
+var server = http.Server(app);
 
 app.configure(function () {
     app.set('port', process.env.PORT || 5000);
@@ -12,9 +13,9 @@ app.configure(function () {
     app.use(express.static(path.join(__dirname, '/public')));
 });
 
-var server = http.createServer(app);
 io = io.listen(server);
 
+server.listen(5000);
 
 io.configure(function () {
     io.set('authorization', function (handshakeData, callback) {
