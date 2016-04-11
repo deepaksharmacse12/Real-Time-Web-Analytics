@@ -38,7 +38,7 @@ io.sockets.on('connection', function (socket) {
 
 
     socket.on('message', function (message) {
-        console.log("Got message: " + message);
+        // console.log("Got message: " + message);
         ip = socket.handshake.address.address;
         port = socket.handshake.address.port;        
         url = message;
@@ -46,7 +46,7 @@ io.sockets.on('connection', function (socket) {
     });
 
     socket.on('disconnect', function () {
-        console.log("Socket disconnected");
+        // console.log("Socket disconnected");
         io.sockets.emit('pageview', { 'connections': Object.keys(io.connected).length});
     });
 

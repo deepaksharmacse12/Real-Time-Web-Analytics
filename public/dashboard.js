@@ -10,7 +10,7 @@ socket.on('connect', function () {
     socket.on('pageview', function (msg) {
         $('#connections').html(msg.connections);
         if (msg.url) {
-            if ($('#visits tr').length > 10) {
+            if ($('#visits tr').length > 5) {
                 $('#visits tr:last').remove();
             }
             $('#visits tbody').prepend('<tr><td>' + msg.url + '</td><td>' + msg.ip + '</td><td>' + msg.port + '</td><td>' + msg.timestamp + '</td></tr>');
@@ -28,7 +28,7 @@ socket.on('btn click', function(data){
         if(btnclicks[data.button]){
             // console.log("already presented");
             btnclicks[data.button].clicks+=1;
-            console.log(btnclicks[data.button].clicks);
+            // console.log(btnclicks[data.button].clicks);
             $('#btn' + btnclicks[data.button].btnid).html(btnclicks[data.button].clicks);            
         }
         else{

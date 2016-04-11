@@ -6,36 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <!-- Le styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
-    <style>
-        body {
-            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-        }
-    </style>
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-
     <script src="https://use.edgefonts.net/andika.js"></script>
     <script src="https://use.edgefonts.net/arvo.js"></script>
-    <script type="text/javascript" src = "socket.io/socket.io.js"></script>
-    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
-    !-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" src="dashboard.js"></script>    
-
 </head>
 
 <html>
 <body>
-
     <div class="header">
     <div class="navbar navbar-fixed-top" style="z-index: 10;">
         <div class="navbar-inner">
@@ -45,14 +24,9 @@
         </div>
     </div>
     </div>
-
     <div class="container">
-
     <div class="row-fluid" >
-
         <div id="content" class="span12">
-
-
             <div class="well span3" style="text-align: center;">
                     <h3>Right Now</h3>
                     <p id="connections" style="font-size: 96px;line-height: 96px;">0</p>
@@ -60,6 +34,26 @@
             </div>
 
             <div class="span9">
+
+                <legend>Page Views</legend>
+                <div class="row-fluid">
+                    <table id="pageViews" class="table table-bordered table-striped table-condensed">
+                        <thead>
+                            <tr><td>URL</td><td>Page Views</td></tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>                
+
+                <legend>Button Clicks</legend>
+                <div class="row-fluid">
+                    <table id="btnClicks" class="table table-bordered table-striped table-condensed">
+                        <thead>
+                            <tr><td>Button</td><td>Number of Clicks</td></tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
 
                 <legend>Real Time Activity</legend>
                 <div class="row-fluid">
@@ -71,41 +65,17 @@
                     </table>
                 </div>
 
-                <legend>Page Views</legend>
-                <div class="row-fluid">
-                    <table id="pageViews" class="table table-bordered table-striped table-condensed">
-                        <thead>
-                            <tr><td>URL</td><td>Page Views</td></tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
-                
-                <legend>Button Clicks</legend>
-                <div class="row-fluid">
-                    <table id="btnClicks" class="table table-bordered table-striped table-condensed">
-                        <thead>
-                            <tr><td>Button</td><td>Number of Clicks</td></tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
-
             </div>
 
         </div>
     </div>
-
-    <footer class="footer">
-        <p>Built as a sample application with
-            <a href="http://nodejs.org/">Node.js</a>,
-            <a href="http://socket.io/">Socket.io</a>,
-            <a href="http://expressjs.com/">Express</a>, and
-        <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>,
-        by <a href="http://coenraets.org" target="_blank">Deepak Sharma</a>.<br/></p>
-    </footer>
-
 </div>
+    
+    <script type="text/javascript" src = "socket.io/socket.io.js"></script>
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
+    !-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="dashboard.js"></script>    
 
 </body>
 </html>
